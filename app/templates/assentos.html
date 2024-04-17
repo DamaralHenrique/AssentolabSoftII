@@ -3,29 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ingressos</title>
+        <title>Assentos</title>
     </head>
     <body>
         <h1>Assentos</h1>
-        <!-- <form action="{% url 'comprar_ingresso' %}" method="POST">
-            {% csrf_token %}
-            <label>Nome:</label>
-            <input name="nome" id="nome" required>
-
-            <br/>
-            
-            <label>Numero do assento:</label>
-            <select name="assento" id="assento" multiple required>
-                {% for ingresso in ingressos %}
-                    <option value="{{ingresso}}">{{ingresso}}</option>
-                {% endfor %}
-            </select> 
-
-            <br>
-
-            <input type="submit"/>
-
-            <br>
-        </form> -->
+        {% for lugar in lugares %}
+            <div>
+                <text>{{lugar.assento}}</text>
+                <text>{{lugar.status}}</text>
+                <text>{{lugar.nome}}</text>
+                <br/>
+            </div>
+        {% endfor %}
     </body>
 </html>
